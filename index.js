@@ -1,7 +1,7 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 const app = express()
-const db = require('./queries')
+//const db = require('./queries')
 var path = require('path');
 const { request } = require('http');
 const { response } = require('express');
@@ -25,6 +25,20 @@ app.get('/', (request, response) => {
 app.get('/inventoryPage',(req,res) =>{
     res.sendFile(__dirname+'/Modules/Inventory.html');
 })
+
+app.get('/MobilePage',(req,res) => {
+  res.sendFile(__dirname+'/Modules/Mobile.html');
+})
+
+
+app.get('/MApage',(req,res) => {
+  res.sendFile(__dirname+'/Modules/MA.html');
+})
+
+
+
+
+
 app.listen(port, () => {
   console.log(`App running on port ${port}.`)
 })
