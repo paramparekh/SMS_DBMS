@@ -1,7 +1,7 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 const app = express()
-//const db = require('./queries')
+
 var path = require('path');
 const { request } = require('http');
 const { response } = require('express');
@@ -34,10 +34,6 @@ app.get('/MobilePage',(req,res) => {
 app.get('/MApage',(req,res) => {
   res.sendFile(__dirname+'/Modules/MA.html');
 })
-
-
-
-
 
 app.listen(port, () => {
   console.log(`App running on port ${port}.`)

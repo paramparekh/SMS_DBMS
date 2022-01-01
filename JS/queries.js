@@ -16,3 +16,7 @@ const getMobileDetail = (request, response) => {
     response.status(200).json(results.rows)
   })
 }
+
+module.exports = {
+    getMobileDetail
+}
