@@ -1,6 +1,7 @@
-
-let inv=document.getElementById('inv');
+let inv = document.getElementById("inv");
 if(inv)
-inv.addEventListener("click",function(){
-    location.href="inventoryPage"
-})
+{
+    inv.addEventListener("click",()=>{
+        location.href="InventoryPage";
+    })
+}
