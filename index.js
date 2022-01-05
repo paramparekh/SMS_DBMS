@@ -21,9 +21,7 @@ app.use(
 
 
 app.listen(port, () => {
-<<<<<<< HEAD
-  console.log(`App running on port "http://localhost:${port}/shop"`)
-=======
+
   console.log(`App running on "http://localhost:${port}"`)
->>>>>>> c04c0e91f2283a6806a60bbf1f1abf15bd84c6f8
+
 })
