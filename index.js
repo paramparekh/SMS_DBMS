@@ -30,5 +30,5 @@ app.get('/MobilePage', (request, response) => {
 app.get('/Mobpage',db.getMobileDetail);
 
 app.listen(port, () => {
-  console.log(`App running on port ${port}.`)
+  console.log(`App running on "http://localhost:${port}"`)
 })
