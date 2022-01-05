@@ -1,0 +1,13 @@
+
+#frm{
+    margin-top: 10px;
+    margin-left: 10px;
+}
+#leftdiv{
+    background-color: darkgray;
+    margin-right: 5px;
+    padding: 1%;
+}
+#rightdiv{
+    background-color: darkgray;
+}
