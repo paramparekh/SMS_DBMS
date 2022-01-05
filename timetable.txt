@@ -1,0 +1,14 @@
+ 
+5: supplier and mobile page prototype start  
+6:  ||
+7: end of supplier and mobile page/should be able to add product/mobile
+8: trigger of quantity in pgadmin 
+9: backend work should be completed
+10: start billing
+11: ||
+12: ||
+13: end of billing
+14: uttrayan
+15: vasi uttrayan
+16: campus taiyari
+17: on the campus finally :(:)

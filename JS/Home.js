@@ -5,3 +5,4 @@ if(inv)
         location.href="shop/InventoryPage";
     })
 }
+ 
