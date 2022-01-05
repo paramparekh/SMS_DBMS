@@ -1,7 +1,9 @@
-let mobile=document.getElementById('mob');
+let mobile = document.getElementById("mob");
 if(mobile)
-mobile.addEventListener("click",function(){
-    location.href="MobilePage";
-})
+{
+    mobile.addEventListener("click",()=>{
+        location.href="MobilePage";
+    })
+}
 
 

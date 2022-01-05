@@ -9,13 +9,15 @@ const pool = new Pool({
 
 
 const getMobileDetail = (request, response) => {
-  pool.query('SELECT * FROM mobile ORDER BY product_id ASC', (error, results) => {
+  pool.query('SELECT * FROM mobile JOIN "Product" on "mobile".product_id = "Product".product_id', (error, results) => {
     if (error) {
       throw error
     }
     response.status(200).json(results.rows)
   })
 }
+
+
 
 module.exports = {
     getMobileDetail

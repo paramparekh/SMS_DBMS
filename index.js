@@ -1,14 +1,16 @@
 const express = require('express')
 const bodyParser = require('body-parser')
-const db=require('./JS/queries')
 const app = express()
-
+var Routes = require('./allRoutes');
 var path = require('path');
 const { request } = require('http');
 const { response } = require('express');
 const port = 3000
 
 app.use("/JS", express.static('./JS/'));
+app.use("/CSS",express.static('./CSS/'));
+app.use('/shop',Routes);
+
 
 app.use(bodyParser.json())
 app.use(
@@ -17,18 +19,7 @@ app.use(
   })
 )
 
-app.get('/', (request, response) => {
-  response.sendFile(__dirname+'/Modules/Home.html');
-})
-app.get('/InventoryPage', (request, response) => {
-  response.sendFile(__dirname+'/Modules/Inventory.html');
-})
-app.get('/MobilePage', (request, response) => {
-  response.sendFile(__dirname+'/Modules/Mobile.html');
-})
-
-app.get('/Mobpage',db.getMobileDetail);
 
 app.listen(port, () => {
-  console.log(`App running on port ${port}.`)
+  console.log(`App running on port "http://localhost:${port}/shop"`)
 })
