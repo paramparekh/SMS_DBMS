@@ -1,8 +1,16 @@
 const { request, response } = require('express');
 var express = require('express');
+const { route } = require('express/lib/application');
 var router = express.Router();
-const db = require('./queries.js');
 const bodyParser = require('body-parser')
+const db = require('./queries.js');
+router.use(bodyParser.json())
+router.use(
+  bodyParser.urlencoded({
+    extended: true,
+  })
+)
+
 
 router.use(bodyParser.json())
 router.use(
@@ -27,13 +35,8 @@ router.get('/SupplierPage', (request, response) => {
   })
   
 router.get('/Mobpage',db.getMobileDetail);
+router.get('/Suppage',db.getSupplierDetail);
 
-router.get('/MobilePage/addMobile', (request,response)=>{
-    response.sendFile(__dirname+'/Modules/addMob.html');
-});  
-
-router.post('/MobilePage/addMobile',db.addMobile);
-
-
+router.post('/addSupplier',db.addSupplier);
 
 module.exports = router;

@@ -1,14 +1,8 @@
 let inv = document.getElementById("inv");
-if(inv)
-{
-    inv.addEventListener("click",()=>{
+inv.addEventListener("click",()=>{
         location.href="shop/InventoryPage";
     })
-}
 let sup = document.getElementById("sup");
-if(sup)
-{
-    sup.addEventListener("click",()=>{
+sup.addEventListener("click",()=>{
         location.href="shop/SupplierPage";
     })
-}
