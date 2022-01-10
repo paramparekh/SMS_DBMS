@@ -12,12 +12,7 @@ app.use("/CSS",express.static('./CSS/'));
 
 
 
-app.use(bodyParser.json())
-app.use(
-  bodyParser.urlencoded({
-    extended: true,
-  })
-)
+
 app.use('/shop',Routes);
 
 app.listen(port, () => {
