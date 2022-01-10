@@ -10,4 +10,19 @@
 }
 #rightdiv{
     background-color: darkgray;
+    width: 1200px;
+    height: 650px;
+    padding: 5px;
 }
+
+
+#recorddiv{
+    float: left;
+    border: 1px solid;
+    width: 1140px;
+    margin-left: 90px;
+}
+
+th{ 
+    color:#fff;
+  }

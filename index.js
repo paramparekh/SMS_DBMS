@@ -9,7 +9,7 @@ const port = 3000
 
 app.use("/JS", express.static('./JS/'));
 app.use("/CSS",express.static('./CSS/'));
-app.use('/shop',Routes);
+
 
 
 app.use(bodyParser.json())
@@ -18,7 +18,7 @@ app.use(
     extended: true,
   })
 )
-
+app.use('/shop',Routes);
 
 app.listen(port, () => {
 
