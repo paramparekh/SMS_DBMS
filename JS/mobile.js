@@ -28,20 +28,12 @@ function getMobiledata()
 }
 
 getMobiledata();
-
-/*
-
-IME_no: "123456789123456"
-battery_no: "123456789123456"
-charger_no: "123456789123456"
-company: "Vivo"
-model_name: "91i"
-price: "8800"
-product_description: "Vivo 91i"
-product_id: "1"
-product_status: true
-purchase_id: "1"
-quantity: "5"
-
-*/
+addProd();
+function addProd()
+{
+    let x = document.getElementById("add");
+    x.addEventListener("click",()=>{
+      location.href="MobilePage/addMobile";
+  })
+}
 

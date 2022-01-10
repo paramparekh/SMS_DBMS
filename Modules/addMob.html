@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Mobile Page</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="/CSS/addMob.css">
+    <script type="text/javascript" src="/JS/addMob.js" defer></script>
+</head>
+<body>
+    <div class="col" id="formDiv">
+        <form method="post" id="frm">
+             <label for="cname">Company</label>
+             <input type="text" name = "company" class="form-control" placeholder="Company name">
+             <label for="modelName">Model name</label>
+             <input type="text" class="form-control" name="model_name" placeholder="type model name">
+             <label for="price">price</label>
+             <input type="text" class="form-control" name="price" placeholder="Price in Rupee">
+             <label for="price">Quantity</label>
+             <input type="text" class="form-control" name="quantity" placeholder="Quantity">
+             <label for="supp">Select Supplier</label>
+             <select name="inputState"  class="form-control">
+                <option  selected>Gujarat</option>
+                <option>Maharasta</option>
+                <option>Kerala</option>
+                <option>Rajsthan</option>
+              </select>
+             <br>
+             <center><button class="btn btn-primary" type="submit">Add Product</button></center>
+        </form>
+   </div>
+</body>
+</html>
