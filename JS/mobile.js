@@ -1,12 +1,17 @@
+let x = document.getElementById("add");
+    x.addEventListener("click",()=>{
+      location.href="../Modules/addMob.html";
+  })
+  
 function getMobiledata()  
 {
-
   var table = document.getElementById('myTable');
 
   url="http://localhost:3000/shop/Mobpage";
   fetch(url).then(res=>res.json()).then(data=>{
       
     console.log(data);
+    
     for (var i = 0; i < data.length; i++)
     {
 			var row = `<tr>
@@ -28,12 +33,7 @@ function getMobiledata()
 }
 
 getMobiledata();
-addProd();
-function addProd()
-{
-    let x = document.getElementById("add");
-    x.addEventListener("click",()=>{
-      location.href="MobilePage/addMobile";
-  })
-}
+
+    
+
 
