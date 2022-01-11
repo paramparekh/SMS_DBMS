@@ -7,10 +7,6 @@ const { request } = require('http');
 const { response } = require('express');
 const port = 3000
 
-app.use("/JS", express.static('./JS/'));
-app.use("/CSS",express.static('./CSS/'));
-
-
 
 
 app.use('/shop',Routes);

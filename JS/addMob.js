@@ -15,7 +15,6 @@ function addmobile()
         let rtdata = { company, model_name, price, quantity, state };
 
         console.log(rtdata);
-
        
     })
 }
@@ -25,7 +24,7 @@ document.querySelector('form').addEventListener('submit', (e) => {
     const data = Object.fromEntries(new FormData(e.target).entries());
   //  console.log(data);
 
-    fetch("http://localhost:3000/shop/MobilePage/addMobile",
+    fetch("http://localhost:3000/shop/addmobile",
     {
         method: "post",
         headers:{
@@ -36,6 +35,6 @@ document.querySelector('form').addEventListener('submit', (e) => {
       
     })
     .then(function (res) { return res.json(); })
-    .then(function (data) {})
+    .then(function (data) { })
   });
 

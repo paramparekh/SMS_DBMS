@@ -67,8 +67,14 @@ const  addSupplier = async (request, response) => {
 
 }
 
+const addmobile = (request,response) => {
+   console.log(request.body);
+   
+}
+
 module.exports = {
     getMobileDetail,
     getSupplierDetail,
-    addSupplier
+    addSupplier,
+    addmobile
 }
