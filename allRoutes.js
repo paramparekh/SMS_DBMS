@@ -23,7 +23,7 @@ router.use(
   
 router.get('/Mobpage',db.getMobileDetail);
 router.get('/Suppage',db.getSupplierDetail);
-router.post('/addSupplier',db.addSupplier);
-router.post('/addmobile',db.addmobile);
+router.post('/Suppage',db.addSupplier);
+router.post('/Mobpage',db.addmobile);
 
 module.exports = router;

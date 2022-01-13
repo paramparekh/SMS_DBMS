@@ -7,7 +7,7 @@
        const data=[formdata.get('firstname'),formdata.get('lastname'),formdata.get('Address'),formdata.get('emailid'),formdata.get('gender'),formdata.get('phonenumber')];
       
     
-       const response = await fetch('http://localhost:3000/shop/addSupplier',{
+       const response = await fetch('http://localhost:3000/shop/Suppage',{
            method:'POST',
            headers: {
             "Accept": "application/json",
