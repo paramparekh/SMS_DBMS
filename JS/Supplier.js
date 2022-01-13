@@ -1,23 +1,40 @@
   let form = document.getElementById('frm');
 
-  form.addEventListener('submit',function(e) {
+  form.addEventListener('submit', async function(e) 
+  {
       e.preventDefault();
-    
        const formdata = new FormData(this);
-       
-       
        const data=[formdata.get('firstname'),formdata.get('lastname'),formdata.get('Address'),formdata.get('emailid'),formdata.get('gender'),formdata.get('phonenumber')];
-      // console.log(data);
-
-       fetch('http://localhost:3000/shop/addSupplier',{
+      
+    
+       const response = await fetch('http://localhost:3000/shop/addSupplier',{
            method:'POST',
            headers: {
             "Accept": "application/json",
             "Content-Type": "application/json"},
            body:JSON.stringify(data)
-       }).then(function(res) {res.json()}).then(function(data){ alert('data inserted successfully');})
+       })
+       
+        const Data = await response.json();
+        console.log(Data.Lid);  
+
+        var table = document.getElementById('myTable');
+        var row = `<tr>
+        <td>${Data.Lid}</td>
+       <td>${data[0]}</td>
+       <td>${data[1]}</td>
+       <td>${data[2]}</td>
+       <td>${data[3]}</td>
+       <td>${data[4]}</td>
+       <td>${data[5]}</td>
+       <td><button>edit</button><button>delete</button></td>
+               </tr>`
+     table.innerHTML += row;
+
+     
     })
 
+    
 function getSupplierdata()  
     {
     

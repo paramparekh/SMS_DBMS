@@ -17,8 +17,9 @@ const getMobileDetail = (request, response) => {
   })
 }
 
+
 const getSupplierDetail=(request,response)=>{
-  pool.query('SELECT * FROM "Supplier"', (error, results) => {
+  pool.query('SELECT "Supplier".supplier_id,"Supplier".supplier_name,"Supplier".address,"Supplier".email, "Supplier".date_of_birth,"Supplier".gender,"Supplier_number".contact_number FROM "Supplier" JOIN "Supplier_number" ON "Supplier".supplier_id = "Supplier_number".supplier_id', (error, results) => {
     if (error) {
       throw error
     }
@@ -28,19 +29,23 @@ const getSupplierDetail=(request,response)=>{
 
 }
 
-function getcount()
+
+function getrowcount(table_name)
 {
     return new Promise(resolve =>{
       var id;
-      pool.query('SELECT COUNT(*) as tot FROM "Supplier" ',(error,results)=>{
+
+      text =  "SELECT COUNT(*) AS tot  FROM \"" + table_name + "\"";
+       console.log(text);
+      pool.query(text,(error,results)=>{
         if(error){
           throw error
         }
         id = parseInt(results.rows[0].tot, 10) + 1;
         console.log(id);
         resolve(id);
-      })
-    })
+      } )
+    } )
 }
 
 const  addSupplier = async (request, response) => {
@@ -48,7 +53,7 @@ const  addSupplier = async (request, response) => {
   
      let supplier=request.body;
 
-     const x = await getcount();
+     const x = await getrowcount("Supplier");
      console.log(x);
      var supdata;
    
@@ -56,15 +61,20 @@ const  addSupplier = async (request, response) => {
      console.log(supdata);
 
      pool.query('INSERT INTO "Supplier" (supplier_id, supplier_name, address, email, date_of_birth, gender) VALUES ($1,$2,$3,$4,NOW(),$5)',supdata, (error, results) => {
-      console.log("Hii")
+      
       if (error) {
-        console.log(error)
-        throw error
-        
+        throw error 
       }
-      response.status(200).json(results.rows)
+      response.status(200).json({Lid:x})
     })
+ 
+    
 
+    pool.query('INSERT INTO "Supplier_number" (supplier_id,contact_number) VALUES ($1,$2)',[x,supplier[5]], (error,results) => {
+        if(error){
+           throw error;
+        }
+    })    
 }
 
 const addmobile = (request,response) => {
