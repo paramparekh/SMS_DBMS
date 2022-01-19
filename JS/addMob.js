@@ -1,29 +1,14 @@
-function addmobile()
-{   
-        let frm = document.getElementById('frm');
-        frm.addEventListener('submit', function (e) {
-        e.preventDefault();
 
-
-        let company = document.getElementsByName("company");
-        let model_name = document.getElementsByName("model_name");
-        let price = document.getElementsByName("price");
-        let quantity = document.getElementsByName("quantity");
-        let state = document.getElementsByName('inputState');
-
-        let rtdata = { company, model_name, price, quantity, state };
-
-        console.log(rtdata);
-       
-    })
-}
-
-document.querySelector('form').addEventListener('submit', (e) => {
+let form = document.getElementById('frm');
+form.addEventListener('submit', async (e) => {
     e.preventDefault();
-    const data = Object.fromEntries(new FormData(e.target).entries());
+    const formdata=new FormData(form);
+  const data=[formdata.get('company'),formdata.get('model_name'),formdata.get('price'),formdata.get('quantity'),formdata
+  .get('Supplier_id'),formdata.get('product_description'),formdata.get('status')]
+
     console.log(data);
 
-    fetch("http://localhost:3000/shop/Mobpage",
+    const response=await fetch("http://localhost:3000/shop/Mobpage",
     {
         method: "post",
         headers:{
@@ -33,8 +18,23 @@ document.querySelector('form').addEventListener('submit', (e) => {
            body:JSON.stringify(data)
       
     })
-    .then(function (res) { return res.json(); })
-    .then(function (data) { })
+
+    const Data=await response.json();
+    console.log(Data);
+    var table = document.getElementById('myTable');
+        var row = `<tr>
+        <td>${Data.Lid}</td>
+       <td>${data[0]}</td>
+       <td>${data[1]}</td>
+       <td>${data[2]}</td>
+       <td>${data[3]}</td>
+       <td>${data[4]}</td>
+       <td>${data[5]}</td>
+       <td><button>edit</button><button>delete</button></td>
+               </tr>`
+     table.innerHTML += row;
+
+    
   });
 
 function getSupplierNames(){
