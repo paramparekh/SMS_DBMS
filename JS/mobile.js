@@ -21,9 +21,9 @@ function getMobiledata()
               <td>${data[i].price}</td>
               <td>${data[i].quantity}</td>
               <td>${data[i].product_description}</td>
-							<td>${data[i].IME_no}</td>
-              <td>${data[i].battery_no}</td>
-              <td>${data[i].charger_no}</td>
+              <td>${data[i].supplier_id}</td>
+              <td><button class='btn btn-primary'>edit</button></td>
+              <td><button class='btn btn-primary'>delete</button></td>
 					  </tr>`
 			table.innerHTML += row
     }   

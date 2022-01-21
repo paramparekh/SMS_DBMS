@@ -1,19 +1,17 @@
 #div1{
-    border : 1px solid black;
-    width: 1330px;
-    height: 500px;
+    
     padding: 5px;
 }
 
 #recorddiv{
     float: left;
     border: 1px solid;
-    border-color: black;
-    width: 1140px;
-    margin-left: 90px;
+    margin-left: 230px;
 }
 
 th{ 
     color:#fff;
   }
+
+  
 

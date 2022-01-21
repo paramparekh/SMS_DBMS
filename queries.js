@@ -83,8 +83,10 @@ function getrowcount(table_name,attr)
     return new Promise(resolve =>{
       var id;
 
+
       text =  "SELECT MAX(" + attr + ") AS tot  FROM \"" + table_name + "\"";
        console.log(text);
+
       pool.query(text,(error,results)=>{
         if(error){
           throw error
@@ -101,8 +103,10 @@ const  addSupplier = async (request, response) => {
   
      let supplier=request.body;
 
+
      const x = await getrowcount("Supplier","supplier_id");
      console.log(x);
+
      var supdata;
    
      supdata=[x,supplier[0],supplier[1],supplier[2],supplier[3]];
@@ -125,8 +129,36 @@ const  addSupplier = async (request, response) => {
     })    
 }
 
-const addmobile = (request,response) => {
-   console.log(request.body);
+const addmobile = async(request,response) => {
+    let mobileDeatils=request.body;
+    const x = await getrowcount("Product");
+    var product_data,mobile_data;
+    //product_data= prdtid,price,qty,status,desc,supid
+    product_data=[x,mobileDeatils[2],mobileDeatils[3],mobileDeatils[6],mobileDeatils[5],mobileDeatils[4]];
+    //mobile_data=prdtid,company,modelname
+    mobile_data=[x,mobileDeatils[0],mobileDeatils[1]];
+    console.log(product_data)
+    console.log(mobile_data)
+
+    pool.query('INSERT INTO "Product" (product_id, price, quantity, product_status, product_description, supplier_id) VALUES ($1,$2,$3,$4,$5,$6)',product_data, (error, results) => {
+      
+      if (error) {
+        throw error 
+    
+      }
+     
+      response.status(200).json(product_data)
+    })
+ 
+    
+
+    pool.query('INSERT INTO "mobile" (product_id,company,model_name) VALUES ($1,$2,$3)',mobile_data, (error,results) => {
+        if(error){
+           throw error;
+        }
+    })   
+
+
    
 }
 

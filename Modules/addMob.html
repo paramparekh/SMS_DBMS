@@ -11,27 +11,27 @@
 </head>
 <body>
     <div class="col" id="formDiv">
-        <form method="post" id="frm">
+        <form onkeydown="return event.key != 'Enter';" autocomplete="off"  id="frm">
              <label for="cname">Company</label>
-             <input type="text" name = "company" class="form-control" placeholder="Company name">
+             <input type="text" name = "company" class="form-control" placeholder="Company name" required>
              <label for="modelName">Model name</label>
-             <input type="text" class="form-control" name="model_name" placeholder="type model name">
+             <input type="text" class="form-control" name="model_name" placeholder="Model name" required>
              <label for="price">price</label>
-             <input type="text" class="form-control" name="price" placeholder="Price in Rupee">
+             <input type="text" class="form-control" name="price" placeholder="Price in Rupees"  required>
              <label for="price">Quantity</label>
-             <input type="text" class="form-control" name="quantity" placeholder="Quantity">
+             <input type="text" class="form-control" name="quantity" placeholder="Quantity" required>
              <label for="supp">Select Supplier</label>
-             <select name="Supplier_id" id="ASupplier" class="form-control">
+             <select name="Supplier_id" id="ASupplier" class="form-control" required>
               </select>
               <label for="description">Product description</label>
-              <input type="text" class="form-control" name="product_description" placeholder="product information">
+              <input type="text" class="form-control" name="product_description" placeholder="Product information">
               <label for="status">Product status</label>
-              <select name="status"  class="form-control">
+              <select name="status"  class="form-control" required>
                 <option  selected>True</option>
                 <option>False</option>
               </select>
              <br>
-             <center><button class="btn btn-primary" type="submit">Add Product</button></center>
+             <center><button class="btn btn-primary" type="submit">Add Mobile</button></center>
         </form>
    </div>
 </body>
