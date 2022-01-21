@@ -18,7 +18,9 @@ form.addEventListener('submit', async (e) => {
            body:JSON.stringify(data)
       
     })
-
+    
+    
+    
     const Data=await response.json();
     console.log(Data);
     var table = document.getElementById('myTable');
@@ -31,9 +33,10 @@ form.addEventListener('submit', async (e) => {
        <td>${data[4]}</td>
        <td>${data[5]}</td>
        <td><button>edit</button><button>delete</button></td>
-               </tr>`
-     table.innerHTML += row;
+               </tr>`;
 
+     table.innerHTML += row;
+     alert("data added succesfully");
     
   });
 

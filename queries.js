@@ -36,7 +36,7 @@ function getrowcount(table_name)
       var id;
 
       text =  "SELECT COUNT(*) AS tot  FROM \"" + table_name + "\"";
-       console.log(text);
+      //  console.log(text);
       pool.query(text,(error,results)=>{
         if(error){
           throw error
@@ -92,7 +92,9 @@ const addmobile = async(request,response) => {
       
       if (error) {
         throw error 
+    
       }
+     
       response.status(200).json(product_data)
     })
  
