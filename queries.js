@@ -21,7 +21,20 @@ const deleteSupplier = (request,response) => {
   )
  // response.status(200).json({success:true})
 }
-
+const deletemobile=(request,response)=>{
+  const Id = parseInt(request.params.id);
+  console.log(`deleted id is ${Id}`);
+  
+  
+  pool.query('DELETE FROM public."Product" WHERE product_id = $1',[Id],
+    (error, results) => {
+      if (error) {
+        throw error
+      }
+      response.status(200).json({success : "User deleted with ID"})
+    }
+  )
+}
 const updateSupplier = (request,response) => {
   const Id = parseInt(request.params.id);
   console.log(`updated id is ${Id}`);
@@ -57,7 +70,7 @@ const updateSupplier = (request,response) => {
 }
 
 const getMobileDetail = (request, response) => {
-  pool.query('SELECT * FROM mobile JOIN "Product" on "mobile".product_id = "Product".product_id', (error, results) => {
+  pool.query('SELECT * FROM (mobile JOIN "Product"  on "mobile".product_id = "Product".product_id  JOIN "Supplier" on "Product".supplier_id="Supplier".supplier_id) ', (error, results) => {
     if (error) {
       throw error
     }
@@ -146,7 +159,7 @@ const addmobile = async(request,response) => {
         throw error 
     
       }
-     
+      
       response.status(200).json(product_data)
     })
  
@@ -169,5 +182,6 @@ module.exports = {
     addSupplier,
     addmobile,
     updateSupplier,
-    deleteSupplier
+    deleteSupplier,
+    deletemobile
 }
