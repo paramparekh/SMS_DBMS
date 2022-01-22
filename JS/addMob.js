@@ -42,7 +42,7 @@ form.addEventListener('submit', async (e) => {
 
 function getSupplierNames(){
   var sp = document.getElementById('ASupplier');
-  console.log("Hii");
+  //console.log("Hii");
   url="http://localhost:3000/shop/Suppage";
   fetch(url).then(res=>res.json()).then(data=>
     {

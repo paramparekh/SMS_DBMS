@@ -27,4 +27,5 @@ router.post('/Suppage',db.addSupplier);
 router.post('/Mobpage',db.addmobile);
 router.patch('/:id',db.updateSupplier);
 router.delete('/:id',db.deleteSupplier);
+router.delete('/mobile/:id',db.deletemobile);
 module.exports = router;
