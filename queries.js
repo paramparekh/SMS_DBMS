@@ -131,7 +131,7 @@ const  addSupplier = async (request, response) => {
 
 const addmobile = async(request,response) => {
     let mobileDeatils=request.body;
-    const x = await getrowcount("Product");
+    const x = await getrowcount("Product","product_id");
     var product_data,mobile_data;
     //product_data= prdtid,price,qty,status,desc,supid
     product_data=[x,mobileDeatils[2],mobileDeatils[3],mobileDeatils[6],mobileDeatils[5],mobileDeatils[4]];

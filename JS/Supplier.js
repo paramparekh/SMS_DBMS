@@ -74,7 +74,7 @@
                   </tr>`
         table.innerHTML += row;
 
-        
+          resetForm();
            }
            else
            {
@@ -99,13 +99,25 @@
              selectedRow.cells[3].innerHTML = ndata[2];
              selectedRow.cells[4].innerHTML = ndata[3];
              selectedRow.cells[5].innerHTML = ndata[4];
+             
+             resetForm();
 
            }
      
-     
+           selectedRow = null;
+
     })
 
-    
+  function resetForm()
+  {
+    selectedRow = null;
+    document.getElementById("Name").value = "";
+    document.getElementById("emailid").value = "";
+    document.getElementById("Address").value = "";
+    document.getElementById("gridRadios1").checked = false;
+    document.getElementById("gridRadios2").checked = false;
+    document.getElementById("phonenumber").value = "";
+  }  
 
 
 
