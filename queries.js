@@ -35,6 +35,46 @@ const deletemobile=(request,response)=>{
     }
   )
 }
+const updateMobile = (request,response)=>{
+  const Id = parseInt(request.params.mobile_id);
+  console.log(`updated mobile id is ${Id}`);
+   const udata = request.body;
+   //0: product_id
+   //1: company
+   //2: model name
+   //3: price
+   //4: quantity
+   //5: product_desription
+   //6: product_status
+   //7: suplier_name
+   console.log(udata);
+  pool.query(
+    'UPDATE public."Product" SET supplier_id=$2,price=$3,quantity=$4,product_status=$5,product_description=$6 WHERE product_id = $1',
+    [udata[0],udata[7],udata[3],udata[4],udata[6],udata[5]],
+    (error, results) => {
+      if (error) {
+        throw error
+      }
+     // response.status(200).json({success : "User modified with ID"})
+    }
+  )
+
+    
+  pool.query(
+    'UPDATE public."mobile" SET company=$1,model_name=$2 WHERE product_id = $3',
+    [udata[1],udata[2],udata[0]],
+    (error, results) => {
+      if (error) {
+        throw error
+      }
+      response.status(200).json({success : "Mobile with ID" + Id})
+    }
+  )
+   
+
+
+}
+
 const updateSupplier = (request,response) => {
   const Id = parseInt(request.params.id);
   console.log(`updated id is ${Id}`);
@@ -96,7 +136,6 @@ function getrowcount(table_name,attr)
     return new Promise(resolve =>{
       var id;
 
-
       text =  "SELECT MAX(" + attr + ") AS tot  FROM \"" + table_name + "\"";
        console.log(text);
 
@@ -104,7 +143,10 @@ function getrowcount(table_name,attr)
         if(error){
           throw error
         }
+        if(results.rows[0].tot!=null)
         id = parseInt(results.rows[0].tot, 10) + 1;
+        else
+        id=1;
         console.log(id);
         resolve(id);
       } )
@@ -183,5 +225,6 @@ module.exports = {
     addmobile,
     updateSupplier,
     deleteSupplier,
-    deletemobile
+    deletemobile,
+    updateMobile
 }
