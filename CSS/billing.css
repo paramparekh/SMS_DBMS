@@ -1,0 +1,28 @@
+#leftdiv{
+    width: 50%;
+    background-color: aqua;
+    border-color: black;
+    border: 1px solid;
+    
+}
+
+#rightdiv{
+    width: 50%;
+    background-color: aqua;
+    border-color: black;
+    border: 1px solid;
+}
+
+#selecteditems{
+    width: 100%;
+    background-color: aqua;
+    border-color: black;
+    border: 1px solid;
+}
+
+#billdetails{
+    width: 100%;
+    background-color: rgb(0, 255, 255);
+    border-color: black;
+    border: 1px solid;
+}
