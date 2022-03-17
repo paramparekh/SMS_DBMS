@@ -5,15 +5,42 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script type="text/javascript" src="/JS/Billing.js" defer></script>
+    
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <title>Billing Section</title>
     <link rel="stylesheet" href="/CSS/billing.css">
 </head>
 <body>
+
        
         <div class="row">
              <div class="col" id="leftdiv">left
-                <div class="col" id="sb1">1</div>
+                <div class="col" id="sb1">
+                    <div id="div1">
+         
+        <div id="recorddiv">
+             
+            <table class="table table-striped">
+                <tr  class="bg-info">
+                    <th>product_id</th>
+                    <th>company</th>
+                    <th>model_name</th>
+                    <th>price</th>
+                    <th>quantity</th>
+                    <th>Add to cart</th>
+                </tr>
+            
+                <tbody id="myTable">
+                    
+                </tbody>
+            
+            </table>
+            </div>
+      
+   </div>
+               
+               
+               </div>
                 <div class="col" id="sb2">
                   <div class="col" id="leftdiv">
                      <form onkeydown="return event.key != 'Enter';" autocomplete="off" id="Custfrm" >
@@ -37,10 +64,34 @@
                 </div>
              </div>
              <div class="col" id="rightdiv">
-                <div class="col" id="selecteditems">1</div>
+                <div class="col" id="selecteditems"> <div id="div2">
+    <div id="recorddiv2">
+             
+        <table class="table table-striped">
+            <tr  class="bg-info">
+                <th>product_id</th>
+                <th>company</th>
+                <th>model_name</th>
+                <th>price</th>
+                <th>quantity</th>
+                <th></th>
+                
+            </tr>
+        
+            <tbody id="myTable2">
+                
+            </tbody>
+        
+        </table>
+    
+    </div>
+   </div></div>
              <div class="col" id="billdetails">2</div>
              </div>     
-        </div>
+
+      
+  
+      
         
 </body>
 </html>
