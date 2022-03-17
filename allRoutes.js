@@ -29,4 +29,5 @@ router.patch('/:id',db.updateSupplier);
 router.delete('/:id',db.deleteSupplier);
 router.delete('/mobile/:id',db.deletemobile);
 router.patch('/updatemobile/:mobile_id',db.updateMobile);
+router.post('/billpage',db.addcustomer);
 module.exports = router;
