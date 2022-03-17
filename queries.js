@@ -1,3 +1,6 @@
+const { response } = require('express');
+const { request } = require('express');
+
 const Pool = require('pg').Pool
 const pool = new Pool({
   user: 'postgres',
@@ -217,7 +220,28 @@ const addmobile = async(request,response) => {
    
 }
 
+const addcustomer = async(request,response) =>{
+  let Customer=request.body;
 
+
+  const x = await getrowcount("Customer","customer_id");
+  console.log(x);
+
+  var cusdata;
+   /* name,addr,phonenum */
+  cusdata=[x,Customer[0],Customer[2],Customer[1]];//,Customer[2],Customer[3]];
+  console.log(cusdata);
+
+  pool.query('INSERT INTO "Customer" (customer_id, customer_name,customer_phonenumber,customer_address) VALUES ($1,$2,$3,$4)',cusdata, (error, results) => {
+   
+   if (error) {
+     throw error 
+   }
+   response.status(200).json({success:"yes"})
+ })
+
+  
+}
 module.exports = {
     getMobileDetail,
     getSupplierDetail,
@@ -226,5 +250,6 @@ module.exports = {
     updateSupplier,
     deleteSupplier,
     deletemobile,
-    updateMobile
+    updateMobile,
+    addcustomer
 }

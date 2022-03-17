@@ -11,8 +11,12 @@
     <link rel="stylesheet" href="/CSS/billing.css">
 </head>
 <body>
-     
-    <div id="div1">
+
+       
+        <div class="row">
+             <div class="col" id="leftdiv">left
+                <div class="col" id="sb1">
+                    <div id="div1">
          
         <div id="recorddiv">
              
@@ -31,11 +35,36 @@
                 </tbody>
             
             </table>
-        
-        </div>
+            </div>
       
    </div>
-   <div id="div2">
+               
+               
+               </div>
+                <div class="col" id="sb2">
+                  <div class="col" id="leftdiv">
+                     <form onkeydown="return event.key != 'Enter';" autocomplete="off" id="Custfrm" >
+                          <label for="name">Name</label>
+                          <div class="row">
+                            <div class="col">
+                              <input type="text" class="form-control" placeholder="Name" name="Name" id="Name" >
+                            </div>
+                          </div>
+                         
+                          <label for="inputAddress">Address</label>
+                          <input type="text" class="form-control"  placeholder="1234 Main St" name="Address" id="Address">
+                             
+                          <label for="phonenumber">Contact number</label> 
+                          <input type="tel" class="form-control" placeholder="9173014650" name="phonenumber" id="phonenumber">
+                          <br>
+                          <center><button class="btn btn-primary" type="submit">Add Customer</button></center>
+                     </form>
+                </div>
+
+                </div>
+             </div>
+             <div class="col" id="rightdiv">
+                <div class="col" id="selecteditems"> <div id="div2">
     <div id="recorddiv2">
              
         <table class="table table-striped">
@@ -56,7 +85,12 @@
         </table>
     
     </div>
-   </div>
+   </div></div>
+             <div class="col" id="billdetails">2</div>
+             </div>     
+
+      
+  
       
         
 </body>
