@@ -4,12 +4,12 @@
     margin-left: 10px;
 }
 #leftdiv{
-    background-color: darkgray;
+    background-color: rgba(58, 208, 245, 0.684);
     margin-right: 5px;
     padding: 1%;
 }
 #rightdiv{
-    background-color: darkgray;
+    background-color: rgba(58, 208, 245, 0.684);
     width: 1200px;
     height: 650px;
     padding: 5px;
@@ -24,5 +24,6 @@
 }
 
 th{ 
-    color:#fff;
+    color:rgb(8, 8, 8);
+    background-color: rgb(251, 179, 106);
   }
