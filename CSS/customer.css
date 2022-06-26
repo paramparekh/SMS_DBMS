@@ -1,0 +1,27 @@
+#div1{
+    
+    padding: 5px;
+}
+/*
+#recorddiv{
+    float: left;
+    border: 1px solid;
+    margin-left: 230px;
+}*/
+
+table {
+    margin: 0 auto;
+    width: 100%;
+}
+
+input {
+    width: 60px;
+    overflow-y: scroll;
+}
+
+th{ 
+    color:#fff;
+  }
+
+  
+

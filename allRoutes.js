@@ -22,6 +22,7 @@ router.use(
 
   
 router.get('/Mobpage',db.getMobileDetail);
+router.get('/Cuspage',db.getcustomerDetail);
 router.get('/Suppage',db.getSupplierDetail);
 router.post('/Suppage',db.addSupplier);
 router.post('/Mobpage',db.addmobile);

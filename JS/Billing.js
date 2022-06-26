@@ -1,3 +1,21 @@
+function saveorder()
+{
+  var table = document.getElementById('myTable2');
+  var totalamount = 0;
+  for (var i = 0, row; row = table.rows[i]; i++)
+  {
+   // console.log(row.cells[3].innerHTML)
+      var prd_id = parseInt(row.cells[0].innerHTML);
+      var price = parseInt(row.cells[3].innerHTML);
+      var quant = parseInt(row.cells[4].innerHTML);
+      console.log(price)
+      console.log(quant)
+      totalamount += price*quant; 
+  }
+   console.log(totalamount);
+   var bd = document.getElementById('billdetail');
+   bd.innerHTML = totalamount.toString();
+}
 
 function onDelete(td){
     selectedRow = td.parentElement.parentElement;
@@ -10,7 +28,8 @@ function onEdit(td)
    if(td.innerHTML=="edit"){
        console.log("edit now...");
        td.innerHTML="save";
-       quan = selectedRow.cells[4].innerHTML;
+        quan = selectedRow.cells[4].innerHTML;
+
       selectedRow.cells[4].innerHTML="<input type='text' value='"+quan+"'>";
    }
    else{
@@ -18,7 +37,10 @@ function onEdit(td)
        if(selectedRow.cells[4].children[0].value > quan)
        alert('Error : invalid quantity');
        else
-       selectedRow.cells[4].innerHTML = selectedRow.cells[4].children[0].value; 
+        {
+          selectedRow.cells[4].innerHTML = selectedRow.cells[4].children[0].value; 
+         // console.log(selectedRow.cells[4].children[0].value); 
+      }
        td.innerHTML="edit";
    }
    
