@@ -6,12 +6,8 @@ const { request } = require('http');
 const { response } = require('express');
 const port = 3000
 
-
-
 app.use('/shop',Routes);
 
 app.listen(port, () => {
-
   console.log(`App running on "http://localhost:${port}/shop"`)
-
 })
